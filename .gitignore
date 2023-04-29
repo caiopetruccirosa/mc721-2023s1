@@ -12,3 +12,5 @@
 
 # Ignore .exe files
 *.exe
+
+.vscode
