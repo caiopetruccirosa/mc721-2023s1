@@ -1,0 +1,9 @@
+DURING = 6 (pegar soluções enviadas com o domin)
+    A
+    B
+    C
+    E
+    F
+    I
+
+AFTER = 0
