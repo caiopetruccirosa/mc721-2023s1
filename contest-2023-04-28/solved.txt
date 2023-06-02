@@ -1,0 +1,7 @@
+DURING = 4 (pegar soluções enviadas com a larissa)
+    A
+    B
+    E
+    F
+
+AFTER = 0

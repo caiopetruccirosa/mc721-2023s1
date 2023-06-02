@@ -1,0 +1,7 @@
+DURING = 4
+    A
+    E
+    F
+    I
+
+AFTER = 0
