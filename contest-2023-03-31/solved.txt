@@ -1,3 +1,5 @@
 DURING = 0
 
-AFTER = 0
+AFTER = 2
+    A
+    G
