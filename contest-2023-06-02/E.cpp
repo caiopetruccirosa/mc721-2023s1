@@ -5,17 +5,26 @@
 
 using namespace std;
 
-ll ll_ceil(ll a, ll b) {
-    if (a % b == 0)
-        return a/b;
-    return (a/b)+1;
-}
-
-ll minimum_operations(ll l, ll r, ll x, ll a, ll b) {
+int operations(ll l, ll r, ll x, ll a, ll b) {
     if (a == b)
         return 0;
+        
+    if (abs(a - b) >= x)
+        return 1;
     
-    return min(minimum_operations(l, r, x, b));
+    if (abs(a - l) >= x && abs(l - b) >= x)
+        return 2;
+
+    if (abs(a - r) >= x && abs(r - b) >= x)
+        return 2;
+
+    if (abs(a - l) >= x && abs(l - r) >= x && abs(r - b) >= x)
+        return 3;
+
+    if (abs(b - l) >= x && abs(l - r) >= x && abs(r - a) >= x)
+        return 3;
+
+    return -1;   
 }
 
 int main() {_
@@ -25,11 +34,7 @@ int main() {_
     while (t--) {
         ll l, r, x, a, b;
         cin >> l >> r >> x >> a >> b;
-
-        if ((l <= b && b <= r) || (x*2 > (r-l+1))) {
-        } else {
-            cout << -1 << '\n';
-        }
+        cout << operations(l, r, x, a, b) << '\n';
     }
 
     return 0;

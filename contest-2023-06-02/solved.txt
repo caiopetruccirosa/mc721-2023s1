@@ -2,4 +2,7 @@ DURING = 2
     B
     I
 
-AFTER = 0
+AFTER = 3
+    E
+    F
+    G

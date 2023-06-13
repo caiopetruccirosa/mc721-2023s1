@@ -4,4 +4,6 @@ DURING = 4
     F
     I
 
-AFTER = 0
+AFTER = 2
+    G
+    H

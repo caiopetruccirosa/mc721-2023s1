@@ -7,4 +7,5 @@ DURING = 7
     I
     J
 
-AFTER = 0
+AFTER = 1
+    F
