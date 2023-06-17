@@ -1,6 +1,7 @@
 DURING = 0
 
-AFTER = 3
+AFTER = 4
     A
+    B
     D
     G
