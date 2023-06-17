@@ -8,3 +8,9 @@ AFTER = 7
     E
     F
     H
+
+DONE = 7
+
+REMAINING = 3
+
+TOTAL = 10

@@ -8,3 +8,9 @@ AFTER = 7
     G
     H
     I
+
+DONE = 7
+
+REMAINING = 3
+
+TOTAL = 10

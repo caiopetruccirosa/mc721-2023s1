@@ -7,3 +7,9 @@ DURING = 6 (pegar soluções enviadas com o domin)
     I
 
 AFTER = 0
+
+DONE = 6
+
+REMAINING = 4
+
+TOTAL = 10

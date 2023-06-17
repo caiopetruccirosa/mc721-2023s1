@@ -9,3 +9,9 @@ DURING = 7
 
 AFTER = 1
     F
+
+DONE = 8
+
+REMAINING = 5
+
+TOTAL = 13

@@ -6,3 +6,9 @@ AFTER = 5
     E
     H
     I
+
+DONE = 5
+
+REMAINING = 5
+
+TOTAL = 10

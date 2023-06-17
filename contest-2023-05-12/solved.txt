@@ -7,3 +7,9 @@ DURING = 4
 AFTER = 2
     G
     H
+
+DONE = 6
+
+REMAINING = 4
+
+TOTAL = 10

@@ -5,3 +5,9 @@ AFTER = 4
     B
     D
     G
+
+DONE = 4
+
+REMAINING = 6
+
+TOTAL = 10

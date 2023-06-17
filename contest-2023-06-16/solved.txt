@@ -9,3 +9,9 @@ DURING = 7
 
 AFTER = 1
     I
+
+DONE = 8
+
+REMAINING = 2
+
+TOTAL = 10

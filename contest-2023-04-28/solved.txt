@@ -5,3 +5,9 @@ DURING = 4 (pegar soluções enviadas com a larissa)
     F
 
 AFTER = 0
+
+DONE = 4
+
+REMAINING = 6
+
+TOTAL = 10

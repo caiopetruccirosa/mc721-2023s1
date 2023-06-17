@@ -6,3 +6,9 @@ AFTER = 5
     D
     F
     G
+
+DONE = 5
+
+REMAINING = 5
+
+TOTAL = 10
