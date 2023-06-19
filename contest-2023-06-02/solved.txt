@@ -2,15 +2,16 @@ DURING = 2
     B
     I
 
-AFTER = 5
+AFTER = 6
+    C
     E
     F
     G
     H
     J
 
-DONE = 7
+DONE = 8
 
-REMAINING = 3
+REMAINING = 2
 
 TOTAL = 10
