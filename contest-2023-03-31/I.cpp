@@ -5,8 +5,8 @@
 
 using namespace std;
 
-bool is_hv(vector<ll> &a, int i) {
-    return (a[i-1] < a[i] && a[i+1] < a[i]) || (a[i-1] > a[i] && a[i+1] > a[i]);
+int is_hv(int a, int b, int c) {
+    return (a < b && c < b) || (a > b && c > b);
 }
 
 int main() {_
@@ -19,44 +19,30 @@ int main() {_
         for (int i = 0; i < n; i++)
             cin >> a[i];
         
-        int sum = 0;
-        vector<bool> has_hv(n, false);
+        int cnt = 0;
+        for (int i = 1; i < n-1; i++)
+            if (is_hv(a[i-1], a[i], a[i+1]))
+                cnt++;
+
+        int cnt_minimzed = cnt;
         for (int i = 1; i < n-1; i++) {
-            if (is_hv(a, i)) {
-                has_hv[i] = true;
-                sum++;
+            if (is_hv(a[i-1], a[i], a[i+1])) {
+                int cnt_aux = cnt - 1;
+                if (i-1 > 0)
+                    cnt_aux += is_hv(a[i-2], a[i-1], a[i-1]) - is_hv(a[i-2], a[i-1], a[i]);
+                if (i+1 < n-1)
+                    cnt_aux += is_hv(a[i-1], a[i+1], a[i+2]) - is_hv(a[i], a[i+1], a[i+2]);
+                cnt_minimzed = min(cnt_minimzed, cnt_aux);
+
+                cnt_aux = cnt - 1;
+                if (i-1 > 0)
+                    cnt_aux += is_hv(a[i-2], a[i-1], a[i+1]) - is_hv(a[i-2], a[i-1], a[i]);
+                if (i+1 < n-1)
+                    cnt_aux += is_hv(a[i+1], a[i+1], a[i+2]) - is_hv(a[i], a[i+1], a[i+2]);
+                cnt_minimzed = min(cnt_minimzed, cnt_aux);
             }
         }
-
-        int best_reduced = 0;
-        for (int i = 1; i < n-1; i++) {
-            if (has_hv[i]) {
-                int tmp = a[i];
-
-                a[i] = a[i-1];
-                int reduced = 1;
-                if (has_hv[i-1])
-                    reduced++;
-                if (!is_hv(a, i+1) && has_hv[i+1])
-                    reduced++;
-                else if (is_hv(a, i+1) && !has_hv[i+1])
-                    reduced--;
-
-                best_reduced = max(best_reduced, reduced);
-
-                a[i] = a[i+1];
-                reduced = 1;
-                if (has_hv[i+1])
-                    reduced++;
-                if (!is_hv(a, i-1) && has_hv[i-1])
-                    reduced++;
-                else if (is_hv(a, i-1) && !has_hv[i-1])
-                    reduced--;
-
-                a[i] = tmp;
-            }
-        }
-        cout << sum-best_reduced << '\n';
+        cout << cnt_minimzed << '\n';
     }
     return 0;
 }
