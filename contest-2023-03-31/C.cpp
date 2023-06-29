@@ -10,12 +10,12 @@ int main() {_
     int k;
     while (cin >> k) {
         vector<pii> pairs;
-        for (int x = k-1; x > k/2; x--) {
-            int y = k-x;
-            if (((x*y)/(x+y)) == k)
-                pairs.push_back(pii(x, y));
-        }
+        for (int y = k+1; y <= 2*k; y++)
+            if ((k*y)%(y-k) == 0)
+                pairs.push_back(pii((k*y)/(y-k), y));
+        cout << pairs.size() << '\n';
+        for (pii p: pairs)
+            cout << "1/" << k << " = 1/" << p.first << " + 1/" << p.second << '\n';
     }
-
     return 0;
 }

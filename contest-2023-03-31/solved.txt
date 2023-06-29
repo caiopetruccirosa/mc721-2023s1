@@ -1,13 +1,16 @@
 DURING = 0
 
-AFTER = 4
+AFTER = 7
     A
     B
+    C
     D
+    E
     G
+    J
 
-DONE = 4
+DONE = 7
 
-REMAINING = 6
+REMAINING = 3
 
 TOTAL = 10
