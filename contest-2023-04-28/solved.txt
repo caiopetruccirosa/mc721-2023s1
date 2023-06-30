@@ -4,10 +4,14 @@ DURING = 4 (pegar soluções enviadas com a larissa)
     E
     F
 
-AFTER = 0
+AFTER = 4
+    C
+    D
+    G
+    H
 
-DONE = 4
+DONE = 8
 
-REMAINING = 6
+REMAINING = 2
 
 TOTAL = 10

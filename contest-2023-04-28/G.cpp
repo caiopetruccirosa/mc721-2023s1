@@ -4,8 +4,6 @@
 
 using namespace std;
 
-// not resolved yet
-
 int main() {_
     int t;
     cin >> t;
@@ -13,46 +11,31 @@ int main() {_
     while (t--) {
         int n;
         cin >> n;
-        vector<int> r(n, 0);
-        for (int i = 0; i < n; i++)
+        vector<int> r(n+1), p(n+1);
+        for (int i = 1; i <= n; i++) {
             cin >> r[i];
+            p[i] = p[i-1] + r[i];
+        }
 
         int m;
         cin >> m;
-        vector<int> b(m, 0);
-        for (int i = 0; i < m; i++)
+        vector<int> b(m+1), q(m+1);
+        for (int i = 1; i <= m; i++) {
             cin >> b[i];
+            q[i] = q[i-1] + b[i];
+        }
 
-        vector<int> seq(n+m, 0);
-        int ri = n, bi = m;
-        while (ri > 0 && bi > 0) {
-            if (r[ri-1] <= b[bi-1]) {
-                seq[ri+bi-1] += r[ri-1];
-                ri--;
-            } else {
-                seq[ri+bi-1] += b[bi-1];
-                bi--;
+        vector<vector<int>> dp(n+1, vector<int>(m+1));
+        for (int i = 1; i <= n; i++)
+            dp[i-1][0] = max(dp[i-1][0], p[i]);
+        for (int j = 1; j <= m; j++)
+            dp[0][j] = max(dp[0][j-1], q[j]);
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                dp[i][j] = max(dp[i-1][j-1], max(dp[i][j-1], max(dp[i-1][j], p[i]+q[j])));
             }
         }
-        while (ri > 0) {
-            seq[ri+bi-1] += r[ri-1];
-            ri--;
-        }
-        while (bi > 0) {
-            seq[ri+bi-1] += b[bi-1];
-            bi--;
-        }
-
-        int best_val = 0, current_val = 0;
-        //cout << "Sequência:\n\t";
-        for (int i = 0; i < n+m; i++) {
-            //cout << seq[i] << ' ';
-            current_val += seq[i];
-            best_val = max(best_val, current_val);
-        }
-        //cout << '\n';
-
-        cout << best_val << '\n';
+        cout << dp[n][m] << '\n';
     }
 
     return 0;
