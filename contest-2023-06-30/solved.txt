@@ -1,0 +1,14 @@
+DURING = 5 (pegar solucoes com o brandt)
+    A
+    D
+    F
+    I
+    J
+
+AFTER = 0
+
+DONE = 5
+
+REMAINING = 5
+
+TOTAL = 10
